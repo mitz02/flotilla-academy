@@ -1,6 +1,6 @@
 <?php
 
-$uri = $_SERVER['REQUEST_URI'];
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 if ($uri === '/flotilla/') {
     require "controllers/index.php";
 } elseif ($uri === '/flotilla/about') {
@@ -16,6 +16,10 @@ elseif ($uri === '/flotilla/register') {
 }
 elseif ($uri === '/flotilla/contact') {
     require "controllers/contact.php";
+}
+
+elseif ($uri === '/flotilla/shopping-cart') {
+    require "controllers/shopping-cart.php";
 }
 else {
     require "controllers/404.php";

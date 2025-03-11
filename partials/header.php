@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title ?></title>
+     <!-- AOS JS -->
+     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -13,7 +15,8 @@
 
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <style>
         /* General Reset */
         * {
@@ -294,7 +297,9 @@
                 align-items:start;
                 max-width:600px;
                 background: #fff;
-                position: absolute;
+                position: fixed;
+             
+                z-index: 1000;
                 left: -100%;
                 transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
                 top: 0;
@@ -351,8 +356,8 @@
         </div>
 
         <div class="auth">
-            <a href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
-            <a href="/register"><i class="fas fa-user-plus"></i> Register</a>
+            <a href="/flotilla/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="/flotilla/register"><i class="fas fa-user-plus"></i> Register</a>
         </div>
     </div>
 
@@ -366,9 +371,9 @@
         </div>
 
         <ul id="navMenu">
-            <li><a href="/">HOME</a></li>
-            <li><a href="/about">ABOUT US</a></li>
-            <li><a href="/contact">CONTACT US</a></li>
+            <li><a href="/flotilla/">HOME</a></li>
+            <li><a href="/flotilla/about">ABOUT US</a></li>
+            <li><a href="/flotilla/contact">CONTACT US</a></li>
             <li><a href="#">COURSE SEARCH</a></li>
             <li><a href="#">STUDENT PORTAL</a></li>
         </ul>

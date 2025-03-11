@@ -175,9 +175,114 @@
            margin-bottom: 20px;
            border: none;
        }
-       
+/* Flotilla Courses Section */
+.flotilla-courses {
+    padding: 50px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.course-card {
+    flex: 1 1 calc(33.333% - 40px); /* 3 cards per row on large screens */
+    margin-bottom: 30px;
+    padding: 20px;
+    max-width:90vw;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.course-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.course-details h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #073E5D;
+}
+
+.course-details p {
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.course-meta {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    color: #073E5D;
+    font-size: 14px;
+    flex-wrap: wrap;
+    padding-left: 20px;
+}
+
+.course-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.course-meta i {
+    color: #25AAE1;
+}
+
+/* AOS Animation */
+[data-aos] {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design for Course Cards */
+@media (max-width: 1024px) {
+    .course-card {
+        flex: 1 1 calc(50% - 40px); /* 2 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .course-card {
+        flex: 1 1 100%; /* 1 card per row on small screens */
+    }
+
+    .course-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* Responsive Design for Course Cards */
+
 
        @media (max-width: 768px) {
+     
           
            .search {
                display: none;
@@ -207,88 +312,108 @@
 <body>
 <main>
  
+  
+
    <section class="hero">
-       <div class="hero-wrapper">
-           <div class="hero-content">
-               <h1>Welcome to Flotilla Academy</h1>
-               <h3>Shaping the future of Nigeria's Maritime Industry: knowledge, Skills and Opportunities</h3>
-               <a href="">Explore Our Courses</a>
-           </div>
-       </div>
-   </section>
+        <div class="hero-wrapper">
+            <div class="hero-content">
+                <h1>Welcome to Flotilla Academy</h1>
+                <h3>Shaping the future of Nigeria's Maritime Industry: knowledge, Skills and Opportunities</h3>
+                <a href="">Explore Our Courses</a>
+            </div>
+        </div>
+    </section>
 
-   <section>
-       <div class="about-wrapper contain">
-           <div>
-               <p>Many aspiring boat professionals lack access to comprehensive training and industry insights.</p>
-               <p>Without proper guidance, students may struggle to navigate the complexities of the boat sector, limiting their career growth.</p>
-               <p>Our professional courses provide you with the right skills and information required to succeed in the boat industry by offering specialized training and knowledgeable guidance.</p>
-               <a href="">READ MORE</a>
-           </div>
-           <img src="img/Figure coursebb.jpg.png" alt="">
-       </div>
-   </section>
+    <section>
+        <div class="about-wrapper contain">
+            <div>
+                <p>Many aspiring boat professionals lack access to comprehensive training and industry insights.</p>
+                <p>Without proper guidance, students may struggle to navigate the complexities of the boat sector, limiting their career growth.</p>
+                <p>Our professional courses provide you with the right skills and information required to succeed in the boat industry by offering specialized training and knowledgeable guidance.</p>
+                <a href="">READ MORE</a>
+            </div>
+            <img src="img/Figure coursebb.jpg.png" alt="">
+        </div>
+    </section>
 
-   <section class="our-course">
-       <h2>FLOTILLA COURSES</h2>
-       <div class="our-courses contain">
-           <img src="img/Figure -course12-1-1.jpg.png" alt="">
-           <div>
-               <h3>General Boat Appreciation Course</h3>
-               <p>Welcome to Practical Boat Design and Seamanship International, we are putting
-                   knowledge and skills in the hands of amateur and professional boat builders as
-                   well as marine enthusiasts around the world.</p>
+    <section class="our-course">
+    <h2>FLOTILLA COURSES</h2>
+    <div class="flotilla-courses">
+        <!-- Course 1 -->
+        <div class="course-card" data-aos="fade-up">
+            <img src="img/course1.jpg" alt=" ">
+            <div class="course-details">
+                <h3>General Boat Appreciation</h3>
+                <p>This course provides a comprehensive introduction to boat design, construction, and maintenance. Perfect for beginners and enthusiasts alike.</p>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 1 Week</span>
+                    <span><i class="fas fa-globe"></i> Online</span>
+                    <span><i class="fas fa-calendar-alt"></i> Start: 17th March 2025</span>
+                </div>
+            </div>
+        </div>
 
-               <p>Our mission is to enable craftsmen involved in the boat building industry
-                   wheather they are building high volume production or building to order in small
-                   yards or beachs, to understand and design craft up to 35 metres in length that
-                   will be safe reliable and economical while fulfilling their roles </p>
+        <!-- Course 2 -->
+        <div class="course-card" data-aos="fade-up">
+            <img src="img/course2.jpg" alt=" ">
+            <div class="course-details">
+                <h3>Introduction to Inland Water Transportation</h3>
+                <p>Learn the fundamentals of inland water transportation, including navigation, safety protocols, and operational best practices.</p>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 5 Days</span>
+                    <span><i class="fas fa-globe"></i> Online</span>
+                    <span><i class="fas fa-calendar-alt"></i> Coming Soon</span>
+                 
+                </div>
+            </div>
+        </div>
 
-               <a href="">EXPLORE COURSE</a>
-           </div>
-       </div>
-   </section>
+        <!-- Course 3 -->
+        <div class="course-card" data-aos="fade-up">
+            <img src="img/course3.jpg" alt=" ">
+            <div class="course-details">
+                <h3>Maritime Entrepreneurship</h3>
+                <p>Discover how to start and manage a successful maritime business. This course covers business planning, funding, and industry-specific strategies.</p>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 5 Days</span>
+                    <span><i class="fas fa-globe"></i> Online</span>
+                    <span><i class="fas fa-calendar-alt"></i> Coming Soon</span>
+                 
+                </div>
+            </div>
+        </div>
 
-   <section class="what">
-       <h2>WHAT YOU GET</h2>
-       <div class="what-wrapper contain">
-           <div class="what-item">
-               <img src="img/Figure 2nd-768x461.png" alt="">
-               <h3>EXPERT GUIDANCE FROM INDUSTRY</h3>
+        <!-- Course 4 -->
+        <div class="course-card" data-aos="fade-up">
+            <img src="img/course4.jpg" alt=" ">
+            <div class="course-details">
+                <h3>Basic Boat Building (WOOD/EPOXY)</h3>
+                <p>This course teaches the basics of boat building using wood and epoxy. Learn design, construction, and finishing techniques.</p>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 4 Weeks</span>
+                    <span><i class="fas fa-globe"></i> Online</span>
+                    <span><i class="fas fa-calendar-alt"></i> Coming Soon</span>
+                  
+                </div>
+            </div>
+        </div>
 
-               <p> Expert guidance tailored to your needs, led by our
-                   proficient team with  decades of real-world Boat
-                   building sectors experience.
-               </p>
-
-           </div>
-
-           <div class="what-item">
-               <img src="img/Figure free-listuing-768x461.png" alt="">
-               <h3>ACCESS TO EXCLUSIVE INDUSTRY INSIGHTS AND
-                   RESOURCES</h3>
-
-               <p>Gain access to exclusive industry insights,
-                   resources, and networks, empowering you with
-                   insider knowledge and connections to stay ahead
-                   of industry trends and opportunities.
-               </p>
-
-           </div>
-
-           <div class="what-item">
-               <img src="img/Figure legal-ship-768x461.png" alt="">
-               <h3>NETWORKING OPPORTUNITIES</h3>
-
-               <p> Enhance your professional network by connecting
-                   with fellow students and industry professionals,
-                   fostering valuable collaborations and
-                   opportunities for career advancement.
-               </p>
-
-           </div>
-       </div>
-   </section>
+        <!-- Course 5 -->
+        <div class="course-card" data-aos="fade-up">
+            <img src="img/course5.jpg" alt="Boat Design">
+            <div class="course-details">
+                <h3>Boat Design</h3>
+                <p>Master the principles of boat design, including hull shapes, stability, and performance optimization.</p>
+                <div class="course-meta">
+                    <span><i class="fas fa-clock"></i> 12 Weeks</span>
+                    <span><i class="fas fa-globe"></i> Online</span>
+                    <span><i class="fas fa-calendar-alt"></i>Coming Soon</span>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
    <section class="feature">
        <h2>FEATURED COURSES</h2>
        <div class="feature-wrapper contain">
