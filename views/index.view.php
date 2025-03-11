@@ -1,513 +1,274 @@
-
-<style>
-       
-       .hero {
-           background: url(img/background.jpeg);
-           background-repeat: no-repeat;
-           background-size: cover;
-           background-position: center;
-           background-attachment: fixed;
-           padding: 40px 20px;
-           height: 60vh;
-       }
-       .hero-content {
-           background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-           max-width: 600px;
-           padding: 40px;
-           color: white;
-       }
-       .hero-content h1 {
-           margin-bottom: 20px;
-           font-size: 30px;
-       }
-       .hero-content h3 {
-           margin-bottom: 40px;
-           color: rgb(240, 235, 235);
-           font-size: 18px;
-       }
-       .hero-content a {
-           border: 1px solid white;
-           color: white;
-           padding: 10px;
-       }
-       .hero-wrapper, .contain {
-           max-width: 1200px;
-           margin: 0 auto;
-       }
-       .about-wrapper, .our-courses {
-           display: flex;
-           gap: 20px;
-           max-width:90vw;
-           margin:0 auto;
-           justify-content: space-between;
-           align-items: center;
-           padding: 50px 0;
-          
-       }
-       .about-wrapper p, .our-courses p {
-           margin-bottom: 20px;
-       }
-       .about-wrapper img, .our-courses img {
-           width: 600px;
-       }
-       .about-wrapper a, .our-courses a {
-           background: #073E5D;
-           color: white;
-           padding: 10px 20px;
-       }
-       .our-course h2 {
-           text-align: center;
-       }
-       .what h2, .feature h2 {
-           text-align: center;
-           margin-bottom: 40px;
-       }
-       .what, .feature {
-           padding: 50px 0;
-       }
-       .what-wrapper {
-           display: flex;
-           flex-wrap: wrap;
-           justify-content: space-between;
-       }
-       .what-item {
-           width: 350px;
-           padding: 10px;
-           border-radius: 4px;
-           margin-bottom: 30px;
-           border: 1px solid #073E5D;
-           max-width: 80vw;
-           box-shadow: 0 0 11px rgba(0, 0, 0, 0.3);
-       }
-       .what-item img {
-           width: 100%;
-           border-radius: 8px;
-       }
-       .what-item p, .what-item h3 {
-           padding: 10px;
-       }
-       .what-item h3 {
-           text-align: center;
-       }
-       .feature-wrapper {
-           display: flex;
-           flex-wrap: wrap;
-           justify-content: space-between;
-       }
-       .feature-item {
-           max-width: 80vw;
-           display: flex;
-           height: 300px;
-           margin-bottom: 30px;
-           justify-content: center;
-           align-items: center;
-           background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/feature-1.png);
-           background-repeat: no-repeat;
-           background-size: cover;
-           background-position: center;
-       }
-       .item-overlay {
-           height: 200px;
-           justify-content: center;
-           align-items: center;
-           display: flex;
-           background: #25AAE180;
-       }
-       .item-overlay h3 {
-           text-align: center;
-           color: white;
-           padding: 5px;
-       }
-       .faq-section {
-           max-width: 800px;
-           margin: 50px auto;
-       }
-       .faq-item {
-           border-bottom: 1px solid #ccc;
-           padding: 10px 0;
-       }
-       .faq-question {
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           cursor: pointer;
-           font-weight: 600;
-       }
-       .faq-answer {
-           display: none;
-           padding: 10px 0;
-           color: #555;
-       }
-       .view-more {
-           text-align: center;
-           margin-top: 20px;
-       }
-       .view-more button {
-           background: #073E5D;
-           color: white;
-           border: none;
-           padding: 10px 20px;
-           cursor: pointer;
-           font-size: 16px;
-       }
-       .view-more button:hover {
-           background: #052c42;
-       }
-       .newsletter {
-           background: #1F1F34;
-           color: #FFFFFF;
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           justify-content: center;
-           padding: 50px 10px;
-           margin-bottom: 20px;
-       }
-       .newsletterBtn {
-           display: flex;
-           justify-content: center;
-           align-items: center;
-       }
-       .newsletterBtn button {
-           background: #25AAE1;
-           color: white;
-           padding: 18px 30px;
-           margin-bottom: 20px;
-           border: none;
-       }
-/* Flotilla Courses Section */
-.flotilla-courses {
-    padding: 50px 0;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-.course-card {
-    flex: 1 1 calc(33.333% - 40px); /* 3 cards per row on large screens */
-    margin-bottom: 30px;
+.dashboard {
+    display: flex;
+}
+a{
+    text-decoration: none;
+    
+}
+
+.sidebar {
+    width: 200px;
+    background: #1F1F34;
+
+    color: white;
+    position: fixed;
+    height: 100vh;
+    
     padding: 20px;
-    max-width:90vw;
-    margin: 0 auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background: white;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.course-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.course-card img {
-    width: 100%;
-    height: 200px;
+.menu {
+    list-style: none;
+    padding: 30px 0;
+}
+
+.menu-item {
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.menu-item i {
+    margin-right: 10px;
+}
+
+.menu-item:hover {
+    background-color: #34495e;
+}
+
+.menu-item.active {
+    background-color: #34495e;
+}
+.user-info{
+    position: absolute;
+    display: flex;
+    bottom: 50px;
+    align-items: center;
+
+}
+.user-info  img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    margin-right: 10px;
+   
 }
 
-.course-details h3 {
-    margin-bottom: 10px;
-    font-size: 22px;
-    color: #073E5D;
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 250px;
 }
 
-.course-details p {
-    margin-bottom: 15px;
-    color: #555;
-    line-height: 1.6;
+.page {
+    display: none;
 }
 
-.course-meta {
+.page.active {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.course {
+    background-color: white;
+    padding: 20px;
+    position: relative;
+    margin: 20px 0;
+    max-width: 270px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.plan{
+    background: #f3f4f5;
+    padding: 5px 7px;
+    border-radius: 4px;
+}
+.courses-wrapper{
     display: flex;
-    gap: 20px;
-    align-items: center;
-    color: #073E5D;
-    font-size: 14px;
     flex-wrap: wrap;
-    padding-left: 20px;
+    gap: 20px;
 }
-
-.course-meta span {
+.course-title{
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 5px;
+}
+.course-title a{
+    background: #25AAE1;
+    color:white;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+
+}
+.course h2{
+    font-size: 18px;
+}
+.course h2::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #f3f4f5f6;
+    margin-top: 10px;
+    
+}
+.plan-wrapper{
+    display: flex;
+    gap:20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.plan-item{
+  
+    flex:1;
+}
+.plan-item h4{
+    margin-bottom: 5px;
+}
+.plan-item span {
+    color:#25AAE1;
+    font-size: 14px;
 }
 
-.course-meta i {
-    color: #25AAE1;
-}
-
-/* AOS Animation */
-[data-aos] {
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-[data-aos="fade-up"] {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-[data-aos="fade-up"].aos-animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive Design for Course Cards */
-@media (max-width: 1024px) {
-    .course-card {
-        flex: 1 1 calc(50% - 40px); /* 2 cards per row on medium screens */
-    }
-}
-
-@media (max-width: 768px) {
-    .course-card {
-        flex: 1 1 100%; /* 1 card per row on small screens */
-    }
-
-    .course-meta {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-}
-
-/* Responsive Design for Course Cards */
-
-
-       @media (max-width: 768px) {
-     
-          
-           .search {
-               display: none;
-           }
-           .about-wrapper, .our-courses, .what-wrapper, .feature-wrapper {
-               display: flex;
-               flex-direction: column;
-               align-items: center;
-               flex-wrap: wrap;
-           }
-             .hero {
-         
-           height: 80vh;
-       }
-          
-           .faq-section {
-               max-width: 80vw;
-               margin: 30px auto;
-           }
-          .about-wrapper, .our-courses
-
-           
-       }
-     
-   </style>
+    </style>
 </head>
 <body>
-<main>
- 
-  
-
-   <section class="hero">
-        <div class="hero-wrapper">
-            <div class="hero-content">
-                <h1>Welcome to Flotilla Academy</h1>
-                <h3>Shaping the future of Nigeria's Maritime Industry: knowledge, Skills and Opportunities</h3>
-                <a href="">Explore Our Courses</a>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="logo">Ada Course</div>
+            <ul class="menu">
+                <li class="menu-item active" data-page="home"><i class="fas fa-home"></i> Home</li>
+                <li class="menu-item" data-page="courses"><i class="fas fa-book"></i> Courses</li>
+                <li class="menu-item" data-page="orders"><i class="fas fa-shopping-cart"></i> Orders</li>
+                <li class="menu-item" data-page="shelf"><i class="fas fa-archive"></i> Shelf</li>
+            </ul>
+            <div class="user-info">
+                <img src="img/Figure free-listuing-768x461.png" alt="">
+                <p>Hi, Ronauld</p>
             </div>
         </div>
-    </section>
-
-    <section>
-        <div class="about-wrapper contain">
-            <div>
-                <p>Many aspiring boat professionals lack access to comprehensive training and industry insights.</p>
-                <p>Without proper guidance, students may struggle to navigate the complexities of the boat sector, limiting their career growth.</p>
-                <p>Our professional courses provide you with the right skills and information required to succeed in the boat industry by offering specialized training and knowledgeable guidance.</p>
-                <a href="">READ MORE</a>
+        <div class="main-content">
+            <div class="page home-page active">
+                <h1>Welcome to Ada Course</h1>
+                <p>Explore our courses and enhance your skills.</p>
             </div>
-            <img src="img/Figure coursebb.jpg.png" alt="">
-        </div>
-    </section>
 
-    <section class="our-course">
-    <h2>FLOTILLA COURSES</h2>
-    <div class="flotilla-courses">
-        <!-- Course 1 -->
-        <div class="course-card" data-aos="fade-up">
-            <img src="img/course1.jpg" alt=" ">
-            <div class="course-details">
-                <h3>General Boat Appreciation</h3>
-                <p>This course provides a comprehensive introduction to boat design, construction, and maintenance. Perfect for beginners and enthusiasts alike.</p>
-                <div class="course-meta">
-                    <span><i class="fas fa-clock"></i> 1 Week</span>
-                    <span><i class="fas fa-globe"></i> Online</span>
-                    <span><i class="fas fa-calendar-alt"></i> Start: 17th March 2025</span>
+
+            <div class="page courses-page">
+                <div class="course-title">
+                <h2>Courses</h2>
+                <a href="">Add course</a>
                 </div>
-            </div>
-        </div>
+                 <div class="courses-wrapper">
+                        <div class="course">
+                        <span class="plan">Paid</span>
+                            <h2>Beginner's Guide to Design</h2>
+                            <p>13 Chapters</p>
+                            <p>25 Certificates</p>
+                            <p>254 Orders</p>
+                            <p>500 Added to Shelf</p>
+                            <p>Price: Free</p>
+                        </div>
+                        <div class="course">
+                            <span class="plan">Free</span>
+                            <h2>Beginner's Guide to Design</h2>
+                                <div class="plan-wrapper">
+                                        <div class="plan-item">
+                                        <h4>50,000</h4>
+                                        <span>Price</span>
+                                    </div>
 
-        <!-- Course 2 -->
-        <div class="course-card" data-aos="fade-up">
-            <img src="img/course2.jpg" alt=" ">
-            <div class="course-details">
-                <h3>Introduction to Inland Water Transportation</h3>
-                <p>Learn the fundamentals of inland water transportation, including navigation, safety protocols, and operational best practices.</p>
-                <div class="course-meta">
-                    <span><i class="fas fa-clock"></i> 5 Days</span>
-                    <span><i class="fas fa-globe"></i> Online</span>
-                    <span><i class="fas fa-calendar-alt"></i> Coming Soon</span>
-                 
-                </div>
-            </div>
-        </div>
+                                    <div class="plan-item">
+                                        <h4>13</h4>
+                                        <span>Chapters</span>
+                                    </div>
 
-        <!-- Course 3 -->
-        <div class="course-card" data-aos="fade-up">
-            <img src="img/course3.jpg" alt=" ">
-            <div class="course-details">
-                <h3>Maritime Entrepreneurship</h3>
-                <p>Discover how to start and manage a successful maritime business. This course covers business planning, funding, and industry-specific strategies.</p>
-                <div class="course-meta">
-                    <span><i class="fas fa-clock"></i> 5 Days</span>
-                    <span><i class="fas fa-globe"></i> Online</span>
-                    <span><i class="fas fa-calendar-alt"></i> Coming Soon</span>
-                 
-                </div>
-            </div>
-        </div>
+                                    <div class="plan-item">
+                                        <h4>256</h4>
+                                        <span>Orders</span>
+                                    </div>
 
-        <!-- Course 4 -->
-        <div class="course-card" data-aos="fade-up">
-            <img src="img/course4.jpg" alt=" ">
-            <div class="course-details">
-                <h3>Basic Boat Building (WOOD/EPOXY)</h3>
-                <p>This course teaches the basics of boat building using wood and epoxy. Learn design, construction, and finishing techniques.</p>
-                <div class="course-meta">
-                    <span><i class="fas fa-clock"></i> 4 Weeks</span>
-                    <span><i class="fas fa-globe"></i> Online</span>
-                    <span><i class="fas fa-calendar-alt"></i> Coming Soon</span>
-                  
-                </div>
-            </div>
-        </div>
+                                    <div class="plan-item">
+                                        <h4>25</h4>
+                                        <span>Certificates</span>
+                                    </div>
 
-        <!-- Course 5 -->
-        <div class="course-card" data-aos="fade-up">
-            <img src="img/course5.jpg" alt="Boat Design">
-            <div class="course-details">
-                <h3>Boat Design</h3>
-                <p>Master the principles of boat design, including hull shapes, stability, and performance optimization.</p>
-                <div class="course-meta">
-                    <span><i class="fas fa-clock"></i> 12 Weeks</span>
-                    <span><i class="fas fa-globe"></i> Online</span>
-                    <span><i class="fas fa-calendar-alt"></i>Coming Soon</span>
-                    
-                </div>
+                                    
+                                    <div class="plan-item">
+                                        <h4>25</h4>
+                                        <span>Reviews</span>
+                                    </div>
+                                    
+
+                                    <div class="plan-item">
+                                        <h4>500</h4>
+                                        <span>Add to shelf</span>
+                                    </div>
+                                </div>
+                        </div>
+                 </div>
+            </div>
+
+
+            <div class="page orders-page">
+                <h1>Orders</h1>
+                <p>Total Orders: 254</p>
+            </div>
+            <div class="page shelf-page">
+                <h1>Shelf</h1>
+                <p>Total Items Added to Shelf: 500</p>
             </div>
         </div>
     </div>
-</section>
-   <section class="feature">
-       <h2>FEATURED COURSES</h2>
-       <div class="feature-wrapper contain">
-           <div class="feature-item">
-               <div class="item-overlay">
-                   <h3>Steel Boat Building –Practical</h3>
-               </div>
-           </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const menuItems = document.querySelectorAll('.menu-item');
+    const pages = document.querySelectorAll('.page');
 
-           <div class="feature-item">
-               <div class="item-overlay">
-                   <h3>Steel Boat Building –Practical</h3>
-               </div>
-           </div>
+    menuItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const targetPage = this.getAttribute('data-page');
+            menuItems.forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
 
-           <div class="feature-item">
-               <div class="item-overlay">
-                   <h3>Steel Boat Building –Practical</h3>
-               </div>
-           </div>
-
-           <div class="feature-item">
-               <div class="item-overlay">
-                   <h3>Steel Boat Building –Practical</h3>
-               </div>
-           </div>
-       </div>
-
-   </section>
-
-   <section class="faq-section">
-       <h2>Frequently Asked Questions</h2>
-       <div class="faq-item">
-           <div class="faq-question">What is Flotilla Academy? <i class="fas fa-chevron-down"></i></div>
-           <div class="faq-answer">Flotilla Academy is a premier institution offering specialized courses in the maritime industry.</div>
-       </div>
-       <div class="faq-item">
-           <div class="faq-question">How can I enroll in a course? <i class="fas fa-chevron-down"></i></div>
-           <div class="faq-answer">You can enroll in a course by visiting our website and registering online.</div>
-       </div>
-       <div class="faq-item">
-           <div class="faq-question">Do you offer online classes? <i class="fas fa-chevron-down"></i></div>
-           <div class="faq-answer">Yes, we offer both online and physical classes for flexibility.</div>
-       </div>
-       <div class="faq-item hidden-faq" style="display: none;">
-           <div class="faq-question">What are the payment options? <i class="fas fa-chevron-down"></i></div>
-           <div class="faq-answer">We accept credit cards, bank transfers, and online payment gateways.</div>
-       </div>
-       <div class="faq-item hidden-faq" style="display: none;">
-           <div class="faq-question">Is there a certificate after completion? <i class="fas fa-chevron-down"></i></div>
-           <div class="faq-answer">Yes, all students receive a certification upon course completion.</div>
-       </div>
-       <div class="view-more">
-           <button id="view-more-btn">VIEW FULL LIST OF FAQS</button>
-       </div>
-   </section>
-   <section>
-       <div class="contain newsletter">
-           <h2>Subscribe to newsletter</h2>
-           <p>Never miss our latest news and opportunities and subscribe to our newsletter</p>
-       </div>
-       <div class="newsletterBtn">
-           <button>SUBSCRIBE</button>
-       </div>
-   </section>
-  
-
-</main>
-
-<script>
-   document.addEventListener("DOMContentLoaded", function () {
-       const faqItems = document.querySelectorAll(".faq-question");
-       faqItems.forEach(item => {
-           item.addEventListener("click", function () {
-               const answer = this.nextElementSibling;
-               const icon = this.querySelector("i");
-               if (answer.style.display === "block") {
-                   answer.style.display = "none";
-                   icon.classList.replace("fa-chevron-up", "fa-chevron-down");
-               } else {
-                   answer.style.display = "block";
-                   icon.classList.replace("fa-chevron-down", "fa-chevron-up");
-               }
-           });
-       });
-
-       document.getElementById("view-more-btn").addEventListener("click", function () {
-           document.querySelectorAll(".hidden-faq").forEach(item => {
-               item.style.display = "block";
-           });
-           this.style.display = "none";
-       });
-
-   });
-</script>
+            pages.forEach(page => {
+                page.classList.remove('active');
+                if (page.classList.contains(`${targetPage}-page`)) {
+                    page.classList.add('active');
+                }
+            });
+        });
+    });
+});
+    </script>
 </body>
 </html>
